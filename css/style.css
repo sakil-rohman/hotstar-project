@@ -110,3 +110,17 @@ body{
 .appstor>img{
   width: 100%;;
 }
+
+
+/* responsive= */
+@media only screen and (max-width: 768px){
+  .desktop-nav{
+    display: none;
+  }
+  .sliders{
+    height: 150px;
+  }
+  .grup-btn{
+    display: none;
+  }
+}
