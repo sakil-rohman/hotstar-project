@@ -1,0 +1,1 @@
+# hotstar-project forntend only
