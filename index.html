@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Disney+ Hotstar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
@@ -12,8 +13,17 @@
     <script src="https://kit.fontawesome.com/c4338603d0.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <div id="coupon" >
+        
+      <button onClick="closeCoupon()" class="closebtn">&times;</button>
+      <!-- <div style="border:10px solid red; "> -->
+          <img src="img/cop.jpg" alt="" class="mx-auto d-block w-100" >
+  
+      <!-- </div> -->
+  </div>
+    <div id="main">
     <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark navcolor">
+<nav class="navbar navbar-expand-lg  navcolor">
     <!-- Container wrapper -->
     <div class="container-fluid" >
       <!-- Navbar brand -->
@@ -22,7 +32,7 @@
         aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
-      <div class="text-light desktop-nav"> <i class="fas fa-bars pe-2"></i></div>
+      <div class=" desktop-nav"> <i class="fas fa-bars pe-2"></i></div>
      
       <a class="navbar-brand " href="#"><img id="logo"
           src="img/logo.png" alt="Logo"
@@ -34,9 +44,9 @@
       <!-- Collapsible wrapper -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Left links -->
-        <ul class="navbar-nav me-3">
+        <ul class="navbar-nav me-3 text-navcolor">
           <li class="nav-item">
-            <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">TV</a>
+            <a class="nav-link  active d-flex align-items-center" aria-current="page" href="#">TV</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active d-flex align-items-center" aria-current="page" href="#">Movies</a>
@@ -64,9 +74,9 @@
     <form class="d-flex p-2 bd-highlight  form-search">
       <div class="input-group">
         
-        <input type="search" class="form-control search-box" placeholder="Search" aria-label="Search" />
+        <input type="search" class="form-control search-box " placeholder="Search" aria-label="Search" />
       </div>
-      <a href="#!" class="text-white"><i class="fas fa-search ps-3"></i></a>
+      <a href="#!" class="nav-link"><i class="fas fa-search ps-3"></i></a>
     </form>
 
     <ul class="navbar-nav p-2 bd-highlight grup-btn" >
@@ -79,6 +89,14 @@
       <li class="nav-item" style="width: 65px;">
         <a class="nav-link d-flex p-2 bd-highlight" href="#!">LOGIN</a>
       </li>
+      <li class="nav-item" style="width: 65px;">     
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" onClick="changeMode()" checked >
+          
+        </div>
+        
+      </li>
+      
     </ul>
   </div>
     <!-- Container wrapper -->
@@ -113,7 +131,7 @@
     
     <div class="container-fluid mt-5">
       <div class="row">
-        <h4 class="text-light">Latest & Trending</h4>
+        <h4 class="">Latest & Trending</h4>
         <div class="col-md-2 col-sm-4 card-div">
           <div class="card">
             <img src="img/s1.png"  >
@@ -155,7 +173,7 @@
     
     <div class="container-fluid mt-5">
       <div class="row">
-        <h4 class="text-light">Popular Shows</h4>
+        <h4 class="">Popular Shows</h4>
         <div class="col-md-2 col-sm-4 card-div">
           <div class="card">
             <img src="img/s7.png"  >
@@ -196,7 +214,7 @@
     </div>
     <div class="container-fluid mt-5">
       <div class="row">
-        <h4 class="text-light">Popular Genres</h4>
+        <h4 class="">Popular Genres</h4>
         <div class="col-md-2 col-sm-4 card-div">
           <div class="card">
             <img src="img/gen (1).png"  class="genres" >
@@ -237,7 +255,7 @@
     </div>
 
     <div class="container-fluid mt-5">
-      <h4 class="text-light">Movies Recommended For You</h4>
+      <h4 class="">Movies Recommended For You</h4>
    
     <div class="col-12">
       <div class="row">
@@ -408,6 +426,23 @@
     </div>
   </div>
   </footer>
+  </div>
+  
+<script>
+  window.onload = loadCoupon()
+
+function loadCoupon(){
+  document.getElementById('coupon').style.visibility = 'visible';
+  // document.getElementById('coupon').style.opacity = '2';
+  document.getElementById('main').style.opacity='0.6';
+}
+
+function closeCoupon(){
+  document.getElementById('coupon').style.visibility = 'hidden';
+  document.getElementById('main').style.opacity='1';
+}
+</script>
+  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="javascript/script.js"></script>
   </body>

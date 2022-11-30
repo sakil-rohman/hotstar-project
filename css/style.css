@@ -1,22 +1,41 @@
 body{
     background-color: #0C111B;
     font-family: 'Roboto', sans-serif;
+    color: #D0D1D4;
     
+}
+.body2{
+  background-color: #fefeff;
+  color: #2a2b2e ;
+  /* font-size: 14;
+  font-weight: 700; */
+
 }
 .container-fluid{
   padding-left: 50px;
 }
-.navcolor .nav-item .nav-link {
-    color: #D0D1D4;
+ .nav-link {
+    color: #D0D1D4 !important;
+  }
+  .text-navcolor{
+    color: #D0D1D4 !;
+  }
+ .nav-link2{
+    color: #2a2b2e !important;
   }
   .navcolor{
     background-color: #131A27;
+    color: #D0D1D4;
+  }
+  .navcolor2{
+    background-color: #c3bebe;
+    color:#131A27;
   }
   .navbar-dark .nav-item .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     border-radius: 0.25rem;
-    color: #fff;
+    /* color: #fff; */
   }
   
   .fa-li {
@@ -30,6 +49,7 @@ body{
     font-weight: 700;
 
   }
+  
   .search-box{
     height: 32px;
     width: 80px;
@@ -75,11 +95,18 @@ body{
     height: 100%;
     margin-left: -197px;
   }
-
+  .footer2{
+    background-color: #9b9b9c;
+  }
   .about-footer{
     font-size: 12px;
     color: #D0D1D4;
     padding: 20px;
+  }
+  .about-footer2{
+    /* font-size: 12px; */
+    color: #26272aaf;
+    /* padding: 20px; */
   }
 .head-footer{
   font-size: 16px;
@@ -124,3 +151,26 @@ body{
     display: none;
   }
 }
+
+@media only screen and (max-width: 475px){
+  .container-fluid{
+    padding-left: 20px;
+  }
+}
+
+#coupon{
+
+    height: 200px;
+    width: 54%;
+    /* background-color: gray; */
+    margin-left: 26%;
+    position: fixed;
+    z-index: 100;
+    margin-top: 10%;
+    
+    visibility: hidden; 
+}
+.closebtn{
+  position: absolute;
+}
+
