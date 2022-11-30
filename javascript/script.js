@@ -13,6 +13,7 @@ const changeMode = () => {
     let navlink9 = document.getElementsByClassName('nav-link')[7];
     let navcolor = document.getElementsByClassName('about-footer')[0];
     let navcolor2 = document.getElementsByClassName('navbar')[0];
+    // let navcolor2 = document.getElementsByClassName('navbar')[0];
     // let footercolor= document.getElementsByTagName('footer')[0];
     mybody.classList.toggle('body2');
     mynav.classList.toggle('navcolor2');
