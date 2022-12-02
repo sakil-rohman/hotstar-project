@@ -60,6 +60,12 @@ body{
     color: #D0D1D4;
 
   }
+  #weather{
+    font-size:14px;
+  }
+  #out{
+    font-size:10px;
+  }
   .sliders{
     height: 390px;
   }

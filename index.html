@@ -17,8 +17,7 @@
         
       <button onClick="closeCoupon()" class="closebtn">&times;</button>
       <!-- <div style="border:10px solid red; "> -->
-          <img src="img/cop.jpg" alt="" class="mx-auto d-block w-100" >
-  
+          <img src="img/cop.jpg" alt="" class="mx-auto d-block w-100" >  
       <!-- </div> -->
   </div>
     <div id="main">
@@ -95,6 +94,18 @@
           
         </div>
         
+      </li>
+      <li class="nav-item" >  
+        <div class="row">
+        <div class="col-sm-12" >
+          <img src="img/cloud.png" alt="weather" style="width: 30px; height: 30px;"  onClick="geolocation()">
+          <span id="weather"></span>
+          <p id="out"></p>
+        </div>  
+        <!-- <div class="col-sm-6">
+
+        </div> -->
+        </div>     
       </li>
       
     </ul>
@@ -441,6 +452,39 @@ function closeCoupon(){
   document.getElementById('coupon').style.visibility = 'hidden';
   document.getElementById('main').style.opacity='1';
 }
+</script>
+<script>
+  window.onload = geolocation()
+  let x = document.getElementById('out');
+  let y = document.getElementById('weather');
+  function geolocation(){
+      if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(showPosition)
+      }else{
+          x.innerText = "Geo Not Supported"
+      }
+  }
+
+  function showPosition(data){
+      console.log(data);
+      let lat = data.coords.latitude;
+      let long = data.coords.longitude;
+      let out = `Latitude: ${lat} & longitude:${long}`
+      x.innerText = out
+      const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${long}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`
+      ///api calling
+      fetch(url,{method: 'GET'})
+      //return promise
+      .then((res) => res.json())
+      //return data
+      .then((data) => {
+          console.log(data)
+          let city = data.city.name
+          let temp = data.list[0].temp.day
+          y.innerText = ` ${city} / ${temp} °C`
+      })
+  }
+
 </script>
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
